@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <h1>My Tasks</h1>
+
+    <!--  Adding tasks -->
+    <div class="add-row">
+      <input
+        type="text"
+        id="task-input"
+        placeholder="Want to do what?"
+        aria-label="New task"
+        autocomplete="off"
+      >
+      <button id="add-btn" type="button">Add Task</button>
+    </div>
+
+    <!--  Validation message (hidden until needed) -->
+    <p id="error-msg" class="error hidden" role="alert"></p>
+
+    <!--  counter + clear all -->
+    <div class="toolbar">
+      <span id="task-counter">0 tasks</span>
+      <button id="clear-btn" type="button" class="link-btn">Clear all</button>
+    </div>
+
+    <!--  Display tasks: JavaScript fills this list -->
+    <ul id="task-list"></ul>
+
+    <!--  empty state message -->
+    <p id="empty-msg" class="empty">No tasks yet. Type one above and press Add Task.</p>
+  </main>
+
+  
+  <script src="script.js"></script>
+</body>
+</html>

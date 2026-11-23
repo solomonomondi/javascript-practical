@@ -1,0 +1,164 @@
+:root {
+  --bg: #e9eef2;
+  --panel: #ffffff;
+  --ink: #1b2832;
+  --muted: #62727f;
+  --line: #d5dde3;
+  --accent: #0f766e;
+  --accent-dark: #0b5a54;
+  --danger: #b42318;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+.app {
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 1.75rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+h1 {
+  margin: 0 0 1.25rem;
+  font-size: 1.75rem;
+  letter-spacing: -0.01em;
+}
+
+/* Add row */
+.add-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#task-input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.65rem 0.8rem;
+  font-size: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+#add-btn {
+  padding: 0.65rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#add-btn:hover {
+  background: var(--accent-dark);
+}
+
+:focus-visible {
+  outline: 3px solid #5eb8ae;
+  outline-offset: 2px;
+}
+
+/* Validation message */
+.error {
+  margin: 0.5rem 0 0;
+  color: var(--danger);
+  font-size: 0.95rem;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Counter + clear all */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.25rem 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.link-btn {
+  padding: 0.2rem 0.4rem;
+  font-size: 0.95rem;
+  color: var(--danger);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.link-btn:hover {
+  text-decoration: underline;
+}
+
+/* Task list */
+#task-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.task input[type="checkbox"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.task-text {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+
+/* C. Completed state, toggled by JavaScript */
+.task.completed .task-text {
+  text-decoration: line-through;
+  color: var(--muted);
+}
+
+.delete-btn {
+  padding: 0.3rem 0.65rem;
+  font-size: 0.9rem;
+  color: var(--danger);
+  background: none;
+  border: 1px solid var(--danger);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  color: #fff;
+  background: var(--danger);
+}
+
+/* Empty state */
+.empty {
+  margin: 0;
+  padding: 1.25rem 0 0.25rem;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
